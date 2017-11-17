@@ -11,14 +11,14 @@ form = """
 <html>
     <head>
         <style>
-            form {
+            form {{
                 background-color: #eee;
                 padding: 20px;
                 margin: 0 auto;
                 width: 540px;
                 font: 16px sans-serif;
                 border-radius: 10px;
-            }
+            }}
             textarea {{
                 margin: 10px 0;
                 width: 540px;
@@ -50,5 +50,5 @@ def encrypt():
     rot_by = request.form['rot']
     text_cipher = request.form['text']
     text_cipher = rotate_string(text_cipher, rot_by)
-    return "<h1> " + text_cipher + "</h1>"
+    return form.format(text_cipher)
 app.run()
